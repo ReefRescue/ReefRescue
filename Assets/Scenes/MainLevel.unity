@@ -219,7 +219,7 @@ GameObject:
   - component: {fileID: 588703030}
   - component: {fileID: 588703035}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: GridPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
