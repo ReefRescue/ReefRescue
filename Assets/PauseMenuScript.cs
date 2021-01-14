@@ -2,17 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pausemenu : MonoBehaviour
+public class PauseMenuScript : MonoBehaviour
 {
     public static bool GameIsPaused = false;
-
-    public GameObject PauseMenuUI;
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
-
         {
             if (GameIsPaused)
             {
@@ -25,13 +22,13 @@ public class Pausemenu : MonoBehaviour
     }
     void Resume()
     {
-        PauseMenuUI.SetActive(false);
+        gameObject.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
     void Pause()
     {
-        PauseMenuUI.SetActive(true);
+        gameObject.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
     }
