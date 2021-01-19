@@ -13,7 +13,7 @@ public class CoralPlacer : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && p.GameIsPaused)
+        if (Input.GetMouseButtonDown(0) && !p.GameIsPaused)
         {
             RaycastHit hitInfo;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -28,7 +28,7 @@ public class CoralPlacer : MonoBehaviour
     private void PlaceCubeNear(Vector3 clickPoint)
     {
         var finalPosition = grid.GetNearestPointOnGrid(clickPoint);
-        GameObject.CreatePrimitive(PrimitiveType.Cube).transform.position = finalPosition;
+        GameObject.CreatePrimitive(PrimitiveType.Sphere).transform.position = finalPosition;
 
         //GameObject.CreatePrimitive(PrimitiveType.Sphere).transform.position = nearPoint;
     }

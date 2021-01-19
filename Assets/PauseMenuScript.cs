@@ -12,6 +12,12 @@ public class PauseMenuScript : MonoBehaviour
         PauseMenu = GameObject.Find("PauseCanvas");
     }
 
+    void Start()
+    {
+        // Resume at start of game
+        Resume();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -29,6 +35,7 @@ public class PauseMenuScript : MonoBehaviour
     public void Resume()
     {
         PauseMenu.SetActive(false);
+        // PauseMenu.transform.localScale = new Vector3(0, 0, 0);
         Time.timeScale = 1f;
         GameIsPaused = false;
         Debug.Log("resuming");
@@ -36,6 +43,7 @@ public class PauseMenuScript : MonoBehaviour
     public void Pause()
     {
         PauseMenu.SetActive(true);
+        // PauseMenu.transform.localScale = new Vector3(1, 1, 1);
         Time.timeScale = 0f;
         GameIsPaused = true;
         Debug.Log("pausing");

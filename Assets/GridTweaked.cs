@@ -17,7 +17,7 @@ public class GridTweaked : MonoBehaviour
 
         Vector3 result = new Vector3(
             (float)xCount * xSize,
-            position.y,
+            0,
             (float)zCount * zSize);
 
         result += transform.position;
