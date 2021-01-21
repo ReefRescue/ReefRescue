@@ -21,6 +21,7 @@ public class GridTweaked : MonoBehaviour
             (float)zCount * zSize);
 
         result += transform.position;
+        result = transform.rotation * result;
 
         return result;
     }
@@ -28,12 +29,17 @@ public class GridTweaked : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
-        for (float x = 0; x < 40; x += xSize)
+        for (float x = -20; x < 20; x += xSize)
         {
-            for (float z = 0; z < 40; z += zSize)
+            for (float z = -20; z < 20; z += zSize)
             {
-                var point = GetNearestPointOnGrid(new Vector3(x, 0f, z));
-                Gizmos.DrawSphere(point, 0.1f);
+                var point = GetNearestPointOnGrid(new Vector3(x + transform.position.x, transform.position.y, z + transform.position.z));
+                if (x == 0 && z == 0)
+                {
+                    Gizmos.color = Color.cyan;
+                    Gizmos.DrawSphere(point, 0.1f);
+                    Gizmos.color = Color.yellow;
+                } else Gizmos.DrawSphere(point, 0.1f);
             }
                 
         }
