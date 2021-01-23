@@ -6,6 +6,13 @@ public class ShopOpener : MonoBehaviour {
 
     public GameObject Panel;
 
+    private PauseMenuScript p;
+
+    void Awake()
+    {
+        p = FindObjectOfType<PauseMenuScript>();
+    }
+
     public void OpenPanel()
     {
         if (Panel != null)
