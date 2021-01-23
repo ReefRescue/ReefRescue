@@ -27,6 +27,8 @@ public class CoralPlacer : MonoBehaviour
     private void PlaceCubeNear(Vector3 clickPoint)
     {
         var finalPosition = grid.GetNearestPointOnGrid(clickPoint);
-        GameObject.CreatePrimitive(PrimitiveType.Sphere).transform.position = finalPosition;
+        GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+        sphere.transform.position = finalPosition;
+        sphere.transform.localScale = new Vector3(0.5F, 0.5F, 0.5F);
     }
 }
