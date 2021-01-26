@@ -13,12 +13,16 @@ public class ShopOpener : MonoBehaviour {
         p = FindObjectOfType<PauseMenuScript>();
     }
 
+    private void Start()
+    {
+        Panel.SetActive(false);
+    }
+
     public void OpenPanel()
     {
         if (Panel != null)
         {
-            bool isActive = Panel.activeSelf;
-            Panel.SetActive(!isActive);
+            Panel.SetActive(!Panel.activeSelf);
         }
     }
 }
