@@ -5,19 +5,19 @@ public class GridTweaked : MonoBehaviour
     [SerializeField]
     private Texture tex;
 
-    [SerializeField]
+    //[SerializeField]
     private Vector2 size = new Vector2(0.7f, 1.3f);
 
     [SerializeField]
     private Vector2Int render = new Vector2Int(5, 6);
 
-    [SerializeField]
+    //[SerializeField]
     private Vector2 offset = new Vector2(0, 0);
 
-    [SerializeField]
+    //[SerializeField]
     private Vector2 texScale = new Vector2(4.4f, 6.54f);
 
-    [SerializeField]
+    //[SerializeField]
     private Vector2 texOffset = new Vector2(0.8f, 0.75f);
 
     private void Awake()
@@ -32,10 +32,10 @@ public class GridTweaked : MonoBehaviour
 
     private void Update()
     {
-        MeshRenderer renderer = GetComponent<MeshRenderer>();
-        renderer.material.mainTexture = tex;
-        renderer.material.mainTextureScale = texScale;
-        renderer.material.mainTextureOffset = texOffset;
+        //MeshRenderer renderer = GetComponent<MeshRenderer>();
+        //renderer.material.mainTexture = tex;
+        //renderer.material.mainTextureScale = texScale;
+        //renderer.material.mainTextureOffset = texOffset;
     }
 
     public Vector3 GetNearestPointOnGrid(Vector3 position)
