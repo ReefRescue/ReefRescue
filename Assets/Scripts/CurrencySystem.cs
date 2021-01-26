@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class CurrencySystem : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public int balance;
+
     void Start()
     {
-        
+        balance = 0;
     }
 
     // Update is called once per frame
