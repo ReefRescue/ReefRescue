@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 public class CoralPlacer : MonoBehaviour
 {
+    [SerializeField]
     private GridTweaked grid;
     private PauseMenuScript p;
 
@@ -15,7 +16,7 @@ public class CoralPlacer : MonoBehaviour
 
     private void Awake()
     {
-        grid = FindObjectOfType<GridTweaked>();
+        //grid = FindObjectOfType<GridTweaked>();
         p = FindObjectOfType<PauseMenuScript>();
     }
 

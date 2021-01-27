@@ -5,19 +5,19 @@ public class GridTweaked : MonoBehaviour
     [SerializeField]
     private Texture tex;
 
-    //[SerializeField]
-    private Vector2 size = new Vector2(0.7f, 1.3f);
+    [SerializeField]
+    public Vector2 size = new Vector2(0.7f, 1.3f);
 
     [SerializeField]
     private Vector2Int render = new Vector2Int(5, 6);
 
-    //[SerializeField]
+    [SerializeField]
     private Vector2 offset = new Vector2(0, 0);
 
-    //[SerializeField]
+    [SerializeField]
     private Vector2 texScale = new Vector2(4.4f, 6.54f);
 
-    //[SerializeField]
+    [SerializeField]
     private Vector2 texOffset = new Vector2(0.8f, 0.75f);
 
     private void Awake()
@@ -56,6 +56,11 @@ public class GridTweaked : MonoBehaviour
         return result;
     }
 
+    public Vector3 GetNearestPointOnGridRelative(Vector3 position)
+    {
+        return GetNearestPointOnGrid(position + transform.position);
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
@@ -66,7 +71,7 @@ public class GridTweaked : MonoBehaviour
         {
             for (int z = -render.y; z <= render.y; z += 1)
             {
-                var point = GetNearestPointOnGrid(new Vector3(x * size.x + transform.position.x, transform.position.y, z * size.y + transform.position.z));
+                var point = GetNearestPointOnGridRelative(new Vector3(x * size.x, 0, z * size.y));
                 if (x == 0 && z == 0)
                 {
                     Gizmos.color = Color.cyan;
