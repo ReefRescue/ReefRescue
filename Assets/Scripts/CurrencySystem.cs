@@ -8,7 +8,7 @@ public class CurrencySystem : MonoBehaviour
     [SerializeField]
     private int startingBalance = 100;
 
-    public int balance;
+    public static int balance;
 
     private Text CurrencyDisplay;
 
@@ -22,7 +22,7 @@ public class CurrencySystem : MonoBehaviour
         balance = startingBalance;
     }
 
-    void Update()
+    void LateUpdate()
     {
         CurrencyDisplay.text = balance.ToString();
     }

@@ -720,13 +720,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 588703029}
-  m_LocalRotation: {x: -0.13917176, y: -0.0006072633, z: -0.0043209037, w: 0.9902587}
+  m_LocalRotation: {x: -0.13917309, y: 0, z: 0, w: 0.9902681}
   m_LocalPosition: {x: 0, y: 0.08, z: -4.02}
   m_LocalScale: {x: 0.3, y: 1, z: 0.85}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: -16, y: 0, z: -0.5}
+  m_LocalEulerAnglesHint: {x: -16, y: 0, z: 0}
 --- !u!114 &588703037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -830,7 +830,7 @@ GameObject:
   - component: {fileID: 740006636}
   - component: {fileID: 740006635}
   m_Layer: 5
-  m_Name: Image
+  m_Name: SandDollar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1681,6 +1681,7 @@ GameObject:
   - component: {fileID: 1670138414}
   - component: {fileID: 1670138416}
   - component: {fileID: 1670138417}
+  - component: {fileID: 1670138418}
   m_Layer: 0
   m_Name: Scripts
   m_TagString: Untagged
@@ -1746,7 +1747,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingBalance: 100
-  balance: 0
+--- !u!114 &1670138418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1670138413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d165eba48ef9c4056b858cc75e1ad0df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1720048960
 GameObject:
   m_ObjectHideFlags: 0
@@ -1927,7 +1939,7 @@ GameObject:
   - component: {fileID: 1978765220}
   - component: {fileID: 1978765219}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Shop Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

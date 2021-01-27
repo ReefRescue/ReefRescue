@@ -59,5 +59,7 @@ public class CoralPlacer : MonoBehaviour
         SpriteRenderer renderer = coral.GetComponent<SpriteRenderer>();
         renderer.sortingOrder = 1;
         renderer.sprite = sprites[spriteNum];
+
+        CurrencySystem.balance -= 1;
     }
 }
