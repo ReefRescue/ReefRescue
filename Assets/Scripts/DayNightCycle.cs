@@ -39,6 +39,6 @@ public class DayNightCycle : MonoBehaviour
 
     public static bool IsDay()
     {
-        return Time.time % DAY_LENGTH >= DAY_LENGTH / 8f && Time.time % DAY_LENGTH < DAY_LENGTH * 7f / 8;
+        return Time.time % DAY_LENGTH >= DAY_LENGTH / 6f && Time.time % DAY_LENGTH < DAY_LENGTH * 5f / 6;
     }
 }
