@@ -14,4 +14,7 @@ public class ShopOpener : MonoBehaviour {
             Panel.SetActive(!isActive);
         }
     }
-}
+    }
+
+
+    
