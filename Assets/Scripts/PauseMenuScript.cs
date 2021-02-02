@@ -42,7 +42,12 @@ public class PauseMenuScript : MonoBehaviour
     }
     public void Pause()
     {
-        PauseMenu.SetActive(true);
+        Pause(true);
+    }
+    public void Pause(bool showPauseMenu)
+    {
+        if (showPauseMenu)
+            PauseMenu.SetActive(true);
         // PauseMenu.transform.localScale = new Vector3(1, 1, 1);
         Time.timeScale = 0f;
         GameIsPaused = true;

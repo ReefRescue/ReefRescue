@@ -10,7 +10,7 @@ public class CoralPlacer : MonoBehaviour
     [SerializeField]
     private Sprite[] sprites;
 
-    public List<Vector3> gridObjs = new List<Vector3>();
+    private List<Vector3> gridObjs = new List<Vector3>();
 
     private int testingIndex = -1;
 
@@ -62,5 +62,6 @@ public class CoralPlacer : MonoBehaviour
         renderer.sprite = sprites[spriteNum];
 
         CurrencySystem.balance -= 1;
+        DayNightCycle.deltaCurrency += 1;
     }
 }
