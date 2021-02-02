@@ -5,17 +5,14 @@ using UnityEngine;
 public class DayNightCycle : MonoBehaviour
 {
     // Seconds for a full day, including night time
-    public static readonly int DAY_LENGTH = 15;
+    public const int DAY_LENGTH = 15;
 
     [SerializeField]
     private GameObject background;
     private SpriteRenderer brenderer;
 
     [SerializeField]
-    public Sprite dayBackground;
-
-    [SerializeField]
-    public Sprite nightBackground;
+    public Sprite[] backgroundsInOrder;
 
     private float lastGiveTime = 0;
 
@@ -33,12 +30,16 @@ public class DayNightCycle : MonoBehaviour
             lastGiveTime = Mathf.Floor(Time.time);
         }
 
-        if (IsDay()) brenderer.sprite = dayBackground;
-        else brenderer.sprite = nightBackground;
+        brenderer.sprite = backgroundsInOrder[(int) (GetLocalTime() / (DAY_LENGTH / (float) backgroundsInOrder.Length))];
     }
 
     public static bool IsDay()
     {
-        return Time.time % DAY_LENGTH >= DAY_LENGTH / 6f && Time.time % DAY_LENGTH < DAY_LENGTH * 5f / 6;
+        return GetLocalTime() >= DAY_LENGTH / 6f && GetLocalTime() < DAY_LENGTH * 5f / 6;
+    }
+
+    public static float GetLocalTime()
+    {
+        return Time.time % DAY_LENGTH;
     }
 }
