@@ -21,7 +21,7 @@ public class PauseMenuScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (!DayNightCycle.onDayEndScreen && Input.GetKeyDown(KeyCode.Escape))
         {
             if (GameIsPaused)
             {
@@ -39,6 +39,7 @@ public class PauseMenuScript : MonoBehaviour
         Time.timeScale = 1f;
         GameIsPaused = false;
         Debug.Log("resuming");
+        CoralPlacer.dragging = false;
     }
     public void Pause()
     {
@@ -52,5 +53,7 @@ public class PauseMenuScript : MonoBehaviour
         Time.timeScale = 0f;
         GameIsPaused = true;
         Debug.Log("pausing");
+        CoralPlacer.dragging = false;
+        Destroy(CoralPlacer.hologram);
     }
 }

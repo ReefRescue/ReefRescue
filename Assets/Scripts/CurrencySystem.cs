@@ -8,7 +8,17 @@ public class CurrencySystem : MonoBehaviour
     [SerializeField]
     private int startingBalance = 100;
 
-    public static int balance;
+    private static int balance;
+
+    public static int[] coralCosts;
+
+    public static int[] coralIncome;
+
+    [SerializeField]
+    private int[] tempCoralIncome;
+
+    [SerializeField]
+    private Text[] coralPriceText;
 
     private Text CurrencyDisplay;
 
@@ -19,13 +29,25 @@ public class CurrencySystem : MonoBehaviour
 
     void Start()
     {
-        balance = startingBalance;
+        coralCosts = new int[coralPriceText.Length];
+        SetBalance(startingBalance);
+        for (int i = 0; i < coralPriceText.Length; i++)
+            coralCosts[i] = int.Parse(coralPriceText[i].text);
+
+        coralIncome = tempCoralIncome;
     }
 
     void LateUpdate()
     {
-        CurrencyDisplay.text = balance.ToString();
+        CurrencyDisplay.text = GetBalance().ToString();
     }
 
+    public static bool HasSufficientFunds(int coralIndex)
+    {
+        return GetBalance() >= coralCosts[coralIndex];
+    }
 
+    public static int GetBalance() { return balance; }
+    public static void SetBalance(int b) { balance = b; PanelGreyer.PanelGrey(); }
+    public static void ChangeBalance(int offset) { balance += offset; PanelGreyer.PanelGrey(); }
 }

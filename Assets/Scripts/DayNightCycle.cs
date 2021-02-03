@@ -28,8 +28,7 @@ public class DayNightCycle : MonoBehaviour
 
     public static int deltaCurrency = 0;
 
-    [System.NonSerialized]
-    public bool onDayEndScreen = false;
+    public static bool onDayEndScreen = false;
 
     [SerializeField]
     private float waitFramesBeforeAllowingClick = 100;
@@ -62,7 +61,7 @@ public class DayNightCycle : MonoBehaviour
                 p.Resume();
                 onDayEndScreen = false;
                 dayEndScreen.SetActive(false);
-                CurrencySystem.balance += deltaCurrency;
+                CurrencySystem.ChangeBalance(deltaCurrency);
                 Debug.Log("Changed");
                 lastGiveTime = Mathf.Floor(Time.time);
             }
