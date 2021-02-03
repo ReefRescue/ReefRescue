@@ -17,15 +17,25 @@ public class PanelGreyer : MonoBehaviour
     private static Sprite[] regSprites;
     private static GameObject[] panelsToHide;
 
+    private void Awake()
+    {
+        greyedSprites = tempGreyedSprites;
+        panelsToHide = tempPanelsToHide;
+        Debug.Log(tempPanelsToHide.Length);
+        regSprites = tempRegSprites;
+    }
+
     void Start()
     {
         greyedSprites = tempGreyedSprites;
         panelsToHide = tempPanelsToHide;
+        Debug.Log(tempPanelsToHide.Length);
         regSprites = tempRegSprites;
     }
 
     public static void PanelGrey()
     {
+        Debug.Log(panelsToHide);
         for (int i = 0; i < panelsToHide.Length; i++)
         {
             GameObject o = panelsToHide[i];

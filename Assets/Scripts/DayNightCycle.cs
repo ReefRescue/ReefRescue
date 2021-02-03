@@ -34,7 +34,7 @@ public class DayNightCycle : MonoBehaviour
     private float waitFramesBeforeAllowingClick = 100;
     private float lastTimeSinceDisplay = 0;
 
-    void Start()
+    void Awake()
     {
         brenderer = background.GetComponent<SpriteRenderer>();
         onDayEndScreen = false;

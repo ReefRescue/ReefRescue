@@ -129,6 +129,9 @@ public class CoralPlacer : MonoBehaviour
             renderer.sprite = sprites[spriteNum];
 
             CurrencySystem.ChangeBalance(-CurrencySystem.coralCosts[spriteNum]);
+
+            Debug.Log(DayNightCycle.deltaCurrency);
+            Debug.Log(CurrencySystem.coralIncome[spriteNum]);
             DayNightCycle.deltaCurrency += CurrencySystem.coralIncome[spriteNum];
         }
         else

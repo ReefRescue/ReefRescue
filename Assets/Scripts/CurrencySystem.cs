@@ -25,16 +25,18 @@ public class CurrencySystem : MonoBehaviour
     void Awake()
     {
         CurrencyDisplay = GameObject.Find("BalanceCounter").GetComponent<Text>();
+
+        coralCosts = new int[coralPriceText.Length];
+        for (int i = 0; i < coralPriceText.Length; i++)
+            coralCosts[i] = int.Parse(coralPriceText[i].text);
+
+        Debug.Log(tempCoralIncome);
+        coralIncome = tempCoralIncome;
     }
 
     void Start()
     {
-        coralCosts = new int[coralPriceText.Length];
         SetBalance(startingBalance);
-        for (int i = 0; i < coralPriceText.Length; i++)
-            coralCosts[i] = int.Parse(coralPriceText[i].text);
-
-        coralIncome = tempCoralIncome;
     }
 
     void LateUpdate()
